@@ -1,8 +1,71 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
-  </head>
-  <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+<!-- I got distracted and spent about an hour just messing around with this because I kinda forgot I was working on an assignment and not just making something fun... enjoy LOL -->
+<head>
+	<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	<title>Making Money~</title>
+</head>
+
+<body>
+	<div id='top'>
+		<h3>Your Current Gold:</h3> <p>{{ session['goldearned'] }}</p>
+		<form id='reset' action='/golds/reset' method='post'>
+			<button name='reset'>Start over?</button>
+		</form>
+	</div>
+
+	<div id='destinations'>
+		<div class='containers'>
+			<h2>Farm</h2>
+			<h4>(earn 10-20 gold)</h4>
+			<p>Put in a little effort to make an honest day's pay. You're sure to earn a little bit!</p>
+
+			<form action='/golds/process_money' method='post'>
+				<input type='hidden' name='building' value='farm'>
+				<button name='farmgold'>Find Gold!</button>
+			</form>
+		</div>
+
+		<div class='containers'>
+			<h2>Cave</h2>
+			<h4>(find 0-50 gold)</h4>
+			<p>An eerie looking cave... It could be full of treasures! Or... nothing at all. Be careful in there!</p>
+
+			<form action='/golds/process_money' method='post'>
+				<input type='hidden' name='building' value='cave'>
+				<button name='cavegold'>Find Gold!</button>
+			</form>
+		</div>
+
+		<div class='containers'>
+			<h2>House</h2>
+			<h4>(find 5-15 gold)</h4>
+			<p>A peaceful looking house in a decent part of the town... Why are you looking at the windows like that?</p>
+
+			<form action='/golds/process_money' method='post'>
+				<input type='hidden' name='building' value='house'>
+				<button name='housegold'>Find Gold!</button>
+			</form>
+		</div>
+
+		<div class='containers'>
+			<h2>Casino</h2>
+			<h4>(win/lose 50-100 gold)</h4>
+			<p>Casinos are usually high risk for a high reward. Good luck, and don't get too caught up in the games - you might end up going broke!</p>
+
+			<form action='/golds/process_money' method='post'>
+				<input type='hidden' name='building' value='casino'>
+				<button name='casinogold'>Find Gold!</button>
+			</form>
+		</div>
+	</div>
+
+	<div id='activities'>
+		<h4>Activities:</h4>
+		<div>
+			{% for message in session['message'] %}
+				<p>{{ message }}</p>
+			{% endfor %}
+		</div>
+	</div>
+</body>
 </html>

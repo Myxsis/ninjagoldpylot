@@ -1,3 +1,81 @@
 * {
-  font-family: monaco;
+  /*font-family: monaco;*/
+  margin: 0;
+  padding: 0;
+}
+
+body{
+	width: 80%;
+	margin: 10px auto;
+	font-family: helvetica, sans-serif;
+}
+
+h3, p{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#top{
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+#destinations{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.containers{
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	padding: 20px;
+	margin: 15px 5px;
+}
+
+.containers p{
+	height: 80px;
+	padding: 10px;
+}
+
+.containers button{
+	width: 65%;
+	border: none;
+	border-radius: 15px;
+	background-color: #F8C807;
+	margin: 20px;
+	padding: 5px;
+}
+
+#reset button{
+	border: none;
+	border-radius: 10px;
+	padding: 4px 8px;
+	/*margin: 5px;*/
+	background-color: rgba(63,233,169,0.3);
+	position: relative;
+	left: 170px;
+}
+
+#activities{
+	width: 60%;
+	margin: 0 auto;
+}
+
+#activities div{
+	width: 100%;
+	height: 210px;
+	margin: 0 auto;
+	text-align: left;
+	padding: 0;
+	overflow: hidden;
+	/*resize: none;*/
+	padding: 10px;
+	border: 1px solid black;
+}
+
+#activities p{
+	padding: 3px;
 }
